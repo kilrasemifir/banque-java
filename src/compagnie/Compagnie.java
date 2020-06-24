@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import compagnie.competences.Codeur;
+import compagnie.competences.Manager;
 
 public class Compagnie {
 
 	private String nom;
 	private List<Employe> employes = new ArrayList<Employe>();
 	private List<Codeur> codeurs = new ArrayList<Codeur>();
+	private List<Manager> managers = new ArrayList<Manager>();
 	
 	public Compagnie() {
 	}
@@ -42,9 +44,27 @@ public class Compagnie {
 		this.codeurs.add(codeur);
 	}
 	
+	public List<Codeur> getCodeurs() {
+		return codeurs;
+	}
+	
 	public void lancerProjet() {
 		for (Codeur codeur : codeurs) {
 			codeur.coder();
+		}
+	}
+	
+	public void ajouterManager(Manager manager) {
+		this.managers.add(manager);
+	}
+	
+	public List<Manager> getManagers() {
+		return managers;
+	}
+	
+	public void manager() {
+		for (Manager manager : managers) {
+			manager.manager();
 		}
 	}
 	
