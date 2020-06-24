@@ -3,10 +3,13 @@ package compagnie;
 import java.util.ArrayList;
 import java.util.List;
 
+import compagnie.competences.Codeur;
+
 public class Compagnie {
 
 	private String nom;
 	private List<Employe> employes = new ArrayList<Employe>();
+	private List<Codeur> codeurs = new ArrayList<Codeur>();
 	
 	public Compagnie() {
 	}
@@ -33,6 +36,16 @@ public class Compagnie {
 	
 	public List<Employe> getEmployes() {
 		return employes;
+	}
+	
+	public void ajouterCodeur(Codeur codeur) {
+		this.codeurs.add(codeur);
+	}
+	
+	public void lancerProjet() {
+		for (Codeur codeur : codeurs) {
+			codeur.coder();
+		}
 	}
 	
 }
