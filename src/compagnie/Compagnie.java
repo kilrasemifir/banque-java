@@ -68,4 +68,16 @@ public class Compagnie {
 		}
 	}
 	
+	public void embaucher(Employe employe) {
+		if (employe instanceof Codeur) {
+			this.ajouterCodeur((Codeur)employe);
+			this.employes.add(employe);
+		}
+		if (employe instanceof Manager) {
+			this.ajouterManager((Manager)employe);
+			this.employes.add(employe);
+		}
+		
+	}
+	
 }
