@@ -97,6 +97,7 @@ public class Compagnie {
 			this.ajouterAdministratif((Administratif)employe);
 			employable = true;
 		}
+		
 		if (employable) this.employes.add(employe);
 		
 	}
