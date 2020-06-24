@@ -69,14 +69,16 @@ public class Compagnie {
 	}
 	
 	public void embaucher(Employe employe) {
-		if (employe instanceof Codeur) {
+		boolean employable = false;
+		if (this.codeurs.size() < 10 && employe instanceof Codeur) {
 			this.ajouterCodeur((Codeur)employe);
-			this.employes.add(employe);
+			employable = true;
 		}
-		if (employe instanceof Manager) {
+		if (this.managers.size() < 3 && employe instanceof Manager) {
 			this.ajouterManager((Manager)employe);
-			this.employes.add(employe);
+			employable = true;
 		}
+		if (employable) this.employes.add(employe);
 		
 	}
 	
